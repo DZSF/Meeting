@@ -1,0 +1,44 @@
+<div class="home-container">
+    <div class="home-header">
+        <div class="home-title">Meeting Room Schedule System</div>
+        <div class="home-user">{{user}}</div>
+    </div>
+    <div class="home-date-field">
+        <nz-date-picker class="home-date-picker" nzPlaceHolder="Please select Time" [(ngModel)]="selectedDate" (ngModelChange)="dateSelected($event)"></nz-date-picker>
+        <div class="home-chart-frame">
+            <div echarts [options]="templateOption" class="home-template-chart"></div>
+        </div>
+    </div>
+    <div class="home-schedule-list-field" *ngIf="listOfRoomItem">
+        <div *ngFor="let item of listOfRoomItem" class="home-schedule-item">
+            <div class="home-room-field">
+                <span>{{option.room}}</span>
+                <button nz-button nzType="primary" (click)="popupToSchedule(option.room)">Reserve</button>
+                <button nz-button nzType="default">Edit</button>
+            </div>
+            <div class="home-chart-frame">
+                <div echarts [options]="item.option" class="home-template-chart"></div>
+            </div>
+        </div>
+    </div>
+    <nz-modal [(nzVisible)]="modalVisible"
+              [nzTitle]="modalTitle"
+              [nzContent]="modalContent"
+              [nzFooter]="modalFooter"
+              (nzOnCancel)="modalCancel()">
+        <ng-template #modalTitle>
+            Book Conference Room {{modalRoom}}
+        </ng-template>
+        <ng-template #modalContent>
+            <p>Modal Content</p>
+            <p>Modal Content</p>
+            <p>Modal Content</p>
+            <p>Modal Content</p>
+            <p>Modal Content</p>
+        </ng-template>
+        <ng-template #modalFooter>
+            <button nz-button nzType="default" (click)="modalCancel()">Cancel</button>
+            <button nz-button nzType="primary" (click)="modalOk()" [nzLoading]="isConfirmLoading">Confirm</button>
+        </ng-template>
+    </nz-modal>
+</div>
