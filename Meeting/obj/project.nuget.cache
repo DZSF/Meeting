@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "I0OL1QFi1995LZpniQoClANyTYypl1R2lezR0CbFdJchD2pHUgOb1Gx1C71KknHER4129Pf3r0fpHZ+E55GtIA==",
+  "dgSpecHash": "cplGk/wh26lH0QJPSVHs9Vl/0MB7cRyfUKkRl7qgEAassiEbZfYG0sDyOzyDZFpGSzK1ZLNExmvG5iQ7jDH6ig==",
   "success": true,
   "projectFilePath": "/Users/zyy/Documents/net/meeting/Meeting/Meeting/Meeting.csproj",
   "expectedPackageFiles": [
@@ -48,7 +48,7 @@
     "/Users/zyy/.nuget/packages/microsoft.extensions.options/3.1.4/microsoft.extensions.options.3.1.4.nupkg.sha512",
     "/Users/zyy/.nuget/packages/microsoft.extensions.options.configurationextensions/3.1.4/microsoft.extensions.options.configurationextensions.3.1.4.nupkg.sha512",
     "/Users/zyy/.nuget/packages/microsoft.extensions.primitives/3.1.4/microsoft.extensions.primitives.3.1.4.nupkg.sha512",
-    "/Users/zyy/.nuget/packages/microsoft.netcore.platforms/3.0.0/microsoft.netcore.platforms.3.0.0.nupkg.sha512",
+    "/Users/zyy/.nuget/packages/microsoft.netcore.platforms/3.1.0/microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/microsoft.visualstudio.web.codegeneration/3.1.3/microsoft.visualstudio.web.codegeneration.3.1.3.nupkg.sha512",
     "/Users/zyy/.nuget/packages/microsoft.visualstudio.web.codegeneration.contracts/3.1.3/microsoft.visualstudio.web.codegeneration.contracts.3.1.3.nupkg.sha512",
@@ -59,19 +59,22 @@
     "/Users/zyy/.nuget/packages/microsoft.visualstudio.web.codegeneration.utils/3.1.3/microsoft.visualstudio.web.codegeneration.utils.3.1.3.nupkg.sha512",
     "/Users/zyy/.nuget/packages/microsoft.visualstudio.web.codegenerators.mvc/3.1.3/microsoft.visualstudio.web.codegenerators.mvc.3.1.3.nupkg.sha512",
     "/Users/zyy/.nuget/packages/microsoft.win32.primitives/4.3.0/microsoft.win32.primitives.4.3.0.nupkg.sha512",
+    "/Users/zyy/.nuget/packages/microsoft.win32.registry/4.7.0/microsoft.win32.registry.4.7.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/microsoft.win32.systemevents/4.6.0/microsoft.win32.systemevents.4.6.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/mysql.data/8.0.20/mysql.data.8.0.20.nupkg.sha512",
     "/Users/zyy/.nuget/packages/mysql.data.entityframeworkcore/8.0.20/mysql.data.entityframeworkcore.8.0.20.nupkg.sha512",
     "/Users/zyy/.nuget/packages/mysqlconnector/0.61.0/mysqlconnector.0.61.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/netstandard.library/1.6.1/netstandard.library.1.6.1.nupkg.sha512",
-    "/Users/zyy/.nuget/packages/newtonsoft.json/12.0.2/newtonsoft.json.12.0.2.nupkg.sha512",
+    "/Users/zyy/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
     "/Users/zyy/.nuget/packages/nuget.frameworks/4.7.0/nuget.frameworks.4.7.0.nupkg.sha512",
+    "/Users/zyy/.nuget/packages/oracle.manageddataaccess/19.7.0/oracle.manageddataaccess.19.7.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/pomelo.entityframeworkcore.mysql/3.1.1/pomelo.entityframeworkcore.mysql.3.1.1.nupkg.sha512",
     "/Users/zyy/.nuget/packages/pomelo.jsonobject/2.2.1/pomelo.jsonobject.2.2.1.nupkg.sha512",
     "/Users/zyy/.nuget/packages/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/runtime.native.system/4.3.0/runtime.native.system.4.3.0.nupkg.sha512",
+    "/Users/zyy/.nuget/packages/runtime.native.system.data.sqlclient.sni/4.7.0/runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/runtime.native.system.io.compression/4.3.0/runtime.native.system.io.compression.4.3.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/runtime.native.system.net.http/4.3.0/runtime.native.system.net.http.4.3.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/runtime.native.system.security.cryptography.apple/4.3.0/runtime.native.system.security.cryptography.apple.4.3.0.nupkg.sha512",
@@ -84,6 +87,9 @@
     "/Users/zyy/.nuget/packages/runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "/Users/zyy/.nuget/packages/runtime.win-arm64.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "/Users/zyy/.nuget/packages/runtime.win-x64.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "/Users/zyy/.nuget/packages/runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/ssh.net/2016.1.0/ssh.net.2016.1.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/sshnet.security.cryptography/1.2.0/sshnet.security.cryptography.1.2.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/system.appcontext/4.3.0/system.appcontext.4.3.0.nupkg.sha512",
@@ -100,6 +106,7 @@
     "/Users/zyy/.nuget/packages/system.composition.typedparts/1.0.31/system.composition.typedparts.1.0.31.nupkg.sha512",
     "/Users/zyy/.nuget/packages/system.configuration.configurationmanager/4.4.1/system.configuration.configurationmanager.4.4.1.nupkg.sha512",
     "/Users/zyy/.nuget/packages/system.console/4.3.0/system.console.4.3.0.nupkg.sha512",
+    "/Users/zyy/.nuget/packages/system.data.sqlclient/4.8.1/system.data.sqlclient.4.8.1.nupkg.sha512",
     "/Users/zyy/.nuget/packages/system.diagnostics.debug/4.3.0/system.diagnostics.debug.4.3.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/system.diagnostics.diagnosticsource/4.7.1/system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
     "/Users/zyy/.nuget/packages/system.diagnostics.tools/4.3.0/system.diagnostics.tools.4.3.0.nupkg.sha512",
@@ -138,7 +145,7 @@
     "/Users/zyy/.nuget/packages/system.runtime.interopservices/4.3.0/system.runtime.interopservices.4.3.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/system.runtime.interopservices.runtimeinformation/4.3.0/system.runtime.interopservices.runtimeinformation.4.3.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/system.runtime.numerics/4.3.0/system.runtime.numerics.4.3.0.nupkg.sha512",
-    "/Users/zyy/.nuget/packages/system.security.accesscontrol/4.6.0/system.security.accesscontrol.4.6.0.nupkg.sha512",
+    "/Users/zyy/.nuget/packages/system.security.accesscontrol/4.7.0/system.security.accesscontrol.4.7.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/system.security.cryptography.algorithms/4.3.0/system.security.cryptography.algorithms.4.3.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/system.security.cryptography.cng/4.3.0/system.security.cryptography.cng.4.3.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/system.security.cryptography.csp/4.3.0/system.security.cryptography.csp.4.3.0.nupkg.sha512",
@@ -148,7 +155,7 @@
     "/Users/zyy/.nuget/packages/system.security.cryptography.protecteddata/4.4.0/system.security.cryptography.protecteddata.4.4.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/system.security.cryptography.x509certificates/4.3.0/system.security.cryptography.x509certificates.4.3.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/system.security.permissions/4.6.0/system.security.permissions.4.6.0.nupkg.sha512",
-    "/Users/zyy/.nuget/packages/system.security.principal.windows/4.6.0/system.security.principal.windows.4.6.0.nupkg.sha512",
+    "/Users/zyy/.nuget/packages/system.security.principal.windows/4.7.0/system.security.principal.windows.4.7.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/system.text.encoding.codepages/4.5.1/system.text.encoding.codepages.4.5.1.nupkg.sha512",
     "/Users/zyy/.nuget/packages/system.text.encoding.extensions/4.3.0/system.text.encoding.extensions.4.3.0.nupkg.sha512",
@@ -167,5 +174,16 @@
     "/Users/zyy/.nuget/packages/system.xml.xpath/4.0.1/system.xml.xpath.4.0.1.nupkg.sha512",
     "/Users/zyy/.nuget/packages/system.xml.xpath.xmldocument/4.0.1/system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Oracle.ManagedDataAccess 19.7.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Oracle.ManagedDataAccess",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

@@ -1,0 +1,10 @@
+/Users/zyy/Documents/net/meeting/Meeting/CommonLib/bin/Debug/netcoreapp3.1/Config/SericesConfig.xml
+/Users/zyy/Documents/net/meeting/Meeting/CommonLib/bin/Debug/netcoreapp3.1/Intel.NsgAuto.WaferCost.Base.CommonLib.deps.json
+/Users/zyy/Documents/net/meeting/Meeting/CommonLib/bin/Debug/netcoreapp3.1/Intel.NsgAuto.WaferCost.Base.CommonLib.dll
+/Users/zyy/Documents/net/meeting/Meeting/CommonLib/bin/Debug/netcoreapp3.1/Intel.NsgAuto.WaferCost.Base.CommonLib.pdb
+/Users/zyy/Documents/net/meeting/Meeting/CommonLib/obj/Debug/netcoreapp3.1/CommonLib.csprojAssemblyReference.cache
+/Users/zyy/Documents/net/meeting/Meeting/CommonLib/obj/Debug/netcoreapp3.1/CommonLib.AssemblyInfoInputs.cache
+/Users/zyy/Documents/net/meeting/Meeting/CommonLib/obj/Debug/netcoreapp3.1/CommonLib.AssemblyInfo.cs
+/Users/zyy/Documents/net/meeting/Meeting/CommonLib/obj/Debug/netcoreapp3.1/CommonLib.csproj.CoreCompileInputs.cache
+/Users/zyy/Documents/net/meeting/Meeting/CommonLib/obj/Debug/netcoreapp3.1/Intel.NsgAuto.WaferCost.Base.CommonLib.dll
+/Users/zyy/Documents/net/meeting/Meeting/CommonLib/obj/Debug/netcoreapp3.1/Intel.NsgAuto.WaferCost.Base.CommonLib.pdb

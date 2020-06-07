@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<DBConnectionString></DBConnectionString>
+	<Services>
+		<Service>
+			<ServiceName>schedulelist</ServiceName>
+			<ServiceType>GetScheduleList</ServiceType>
+		</Service>
+        <Service>
+            <ServiceName>book</ServiceName>
+            <ServiceType>SetSchedule</ServiceType>
+        </Service>
+        <Service>
+            <ServiceName>user</ServiceName>
+            <ServiceType>GetUser</ServiceType>
+        </Service>
+	</Services>
+</configuration>

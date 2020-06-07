@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Intel.NsgAuto.WaferCost.Base.CommonLib</AssemblyName>
+    <RootNamespace>Intel.NsgAuto.WaferCost.Base.CommonLib</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Database\Oracle\" />
+    <Folder Include="Database\SQLServer\" />
+    <Folder Include="Database\Mysql\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Oracle.ManagedDataAccess" Version="19.7.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+    <PackageReference Include="MySql.Data" Version="8.0.20" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Config\SericesConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

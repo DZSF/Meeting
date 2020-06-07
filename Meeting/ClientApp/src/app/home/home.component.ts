@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { EChartOption } from 'echarts';
 
-interface IRoomItem {
+class IRoomItem {
   room: string;
   option: EChartOption;
   info: string[];
@@ -34,17 +34,17 @@ export class HomeComponent {
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this._http = http;
-    this._baseUrl = baseUrl + 'api/schedule/';
+    this._baseUrl = baseUrl + 'api/meeting/home/';
     this._getUser();
     this._initialTemplateOption();
   }
 
   public dateSelected(result: Date): void {
     console.log('select date: ' + result);
-    let httpParams: { [key: string]: string } = { 'date': result.toString() };
+    let httpParams: { [key: string]: string } = { 'date': result.toString(), 'test': 'testValue' };
     this._http.get<any>(this._baseUrl + 'schedulelist', { params: httpParams }).subscribe(result => {
-      if (result && result.data) {
-        this._drawScheduleCharts(result.data);
+      if (result) {
+        this._drawScheduleCharts(result);
       }
     }, error => console.error(error));
   }
@@ -61,9 +61,11 @@ export class HomeComponent {
       user: this.user,
       start: this.listOfTime.indexOf(this.modalStartTime),
       end: this.listOfTime.indexOf(this.modalEndTIme),
-      date: this.dateSelected
+      date: this.selectedDate
     };
-    this._http.post(this._baseUrl + 'book', body).subscribe(result => {
+    this.modalStartTime = null;
+    this.modalEndTIme = null;
+    this._http.post(this._baseUrl + 'book/', body).subscribe(result => {
       console.log('Book conference status: ' + result);
       if (result) { // need test
         alert('Book conference ok.');
@@ -79,7 +81,7 @@ export class HomeComponent {
   }
 
   private _getUser(): void {
-    this._http.get<string>(this._baseUrl + 'user').subscribe(result => {
+    this._http.get<any>(this._baseUrl + 'user').subscribe(result => {
       this.user = result;
     }, error => console.error(error));
   }
@@ -91,14 +93,16 @@ export class HomeComponent {
       seriesData.push(0);
     }
     this.templateOption = {
+      color: ["green"],
       grid: {
-        top: '30'
+        top: '25'
       },
       xAxis: {
         type: 'category',
         boundaryGap: false,
         splitLine: {
-          show: true
+          show: true,
+          interval: 0
         },
         data: xData
       },
@@ -116,14 +120,19 @@ export class HomeComponent {
       series: [{
         data: seriesData,
         type: 'line',
+        symbol: 'circle',
+        symbolSize: 5
       }]
     };
   }
 
   private _drawScheduleCharts(data: any): void {
-    let list: IRoomItem[];
+    let list: IRoomItem[] = [];
     let option = {
       color: ['green', 'green'],
+      grid: {
+        top: '25'
+      },
       xAxis: {
         type: 'category',
         boundaryGap: false,
@@ -157,22 +166,27 @@ export class HomeComponent {
           0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
           0, 0, 0, 0, 0],
         type: 'line',
+        symbol: 'circle',
+        symbolSize: 5
       },
       {
         data: [],
         type: 'line',
-        areaStyle: {}
+        areaStyle: {},
+        symbol: 'none'
       }
       ]
     };
     for (let room of Object.keys(data)) {
-      let item: IRoomItem;
+      let item: IRoomItem = new IRoomItem();
       item.room = room;
       item.info = data[room];
+      item.option = option;
+
       // ['1/zhangyuanyuan@1-2,16-18', '/Jack@3-5']
       let listOfTimeInterval: string[] = [];
       for (let str of item.info) {
-        listOfTimeInterval.concat(str.split('@')[1].split(','));
+        listOfTimeInterval = listOfTimeInterval.concat(str.split('@')[1].split(','));
       }
       // ['1-2', '16-18', '3-5'] -> ['1-2', '3-5','16-18']
       listOfTimeInterval.sort(this._sortFunc);
@@ -184,14 +198,13 @@ export class HomeComponent {
         listOfData.push([start, 0], [start, 1], [end, 1], [end, 0]);
       }
       // [[1, 0], [1, 1], [2, 1], [2, 0], [3, 0], [3, 1], [5, 1], [5, 0], [16, 0], [16, 1], [18, 1], [18, 0]]
-      option.series[1].data = listOfData;
-      item.option = option;
+      item.option.series[1].data = listOfData;
       list.push(item);
     }
     this.listOfRoomItem = list.slice(0);
   }
 
   private _sortFunc(val1: string, val2: string): number {
-    return Number(val2.split('-')[0]) - Number(val1.split('-')[0]);
+    return Number(val1.split('-')[0]) - Number(val2.split('-')[0]);
   }
 }

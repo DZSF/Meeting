@@ -3,21 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Meeting.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/meeting1")]
     public class ScheduleController : Controller
     {
-        [HttpGet("user")]
-        public string GetUser()
+        public ActionResult GetUser()
         {
-            return "zhangyuanyuan";
+            string user = "zhangyuanyuan";
+            return new OkObjectResult(user);
         }
 
-        [HttpGet("schedulelist")]
-        public ActionResult GetScheduleList(DateTime date)
+        [HttpGet("{baseUri}/{serviceName}")]
+        public ActionResult Get()
         {
+            string baseUri = RouteData.Values["baseUri"].ToString();
+            string serviceName = RouteData.Values["serviceName"].ToString();
+            if (serviceName == "user") {
+                return GetUser();
+            }
+
+            DateTime date = Convert.ToDateTime(Request.Query["date"]);
             // get from db by date
             Dictionary<string, string[]> scheduleDic = new Dictionary<string, string[]>();
             string[] arrayA = { "1/zhangyuanyuan@1-2,16-18", "2/Jack@3-5" };
@@ -27,9 +36,19 @@ namespace Meeting.Controllers
             return new OkObjectResult( scheduleDic );
         }
 
-        [HttpPost("book")]
-        public ActionResult BookConference([FromBody] string room, string user, int start, int end, DateTime date)
+        [HttpPost("{baseUri}/{serviceName}")]
+        public ActionResult Post([FromBody] dynamic data)
         {
+            string baseUri = RouteData.Values["baseUri"].ToString();
+            string serviceName = RouteData.Values["serviceName"].ToString();
+
+            JObject dataObj = JsonConvert.DeserializeObject<dynamic>(data.ToString());
+            //JObject dataObj = JObject.Parse(data.ToString());
+            string room = dataObj.GetValue("room").ToObject<string>();
+            string user = dataObj.GetValue("user").ToObject<string>();
+            int start = dataObj.GetValue("start").ToObject<int>();
+            int end = dataObj.GetValue("end").ToObject<int>();
+            //DateTime date = dataObj.GetValue("user").ToObject<DateTime>();
             // get from db according to room & date
             Dictionary<string, int> dic1 = new Dictionary<string, int>
             {
@@ -71,5 +90,14 @@ namespace Meeting.Controllers
         public void Delete(int id)
         {
         }
+    }
+
+    public class RoomBook
+    {
+        public string room;
+        public string user;
+        public int start;
+        public int end;
+        public DateTime date;
     }
 }

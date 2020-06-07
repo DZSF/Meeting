@@ -12,9 +12,15 @@
     <div class="home-schedule-list-field" *ngIf="listOfRoomItem">
         <div *ngFor="let item of listOfRoomItem" class="home-schedule-item">
             <div class="home-room-field">
-                <span>{{option.room}}</span>
-                <button nz-button nzType="primary" (click)="popupToSchedule(option.room)">Reserve</button>
-                <button nz-button nzType="default">Edit</button>
+                <span class="home-room-name">{{item.room}}</span>
+                <div class="home-room-button-field">
+                    <button nz-button nzType="primary" nzSize="small" (click)="popupToSchedule(item.room)">
+                        <i nz-icon nzType="lock" nzTheme="outline"></i>Reserve
+                    </button>
+                    <button nz-button nzType="default" nzSize="small" style="margin-left:2px;">
+                        <i nz-icon nzType="edit" nzTheme="outline"></i>Edit
+                    </button>
+                </div>
             </div>
             <div class="home-chart-frame">
                 <div echarts [options]="item.option" class="home-template-chart"></div>
@@ -27,14 +33,21 @@
               [nzFooter]="modalFooter"
               (nzOnCancel)="modalCancel()">
         <ng-template #modalTitle>
-            Book Conference Room {{modalRoom}}
+            Conference Room {{modalRoom}} Booking
         </ng-template>
         <ng-template #modalContent>
-            <p>Modal Content</p>
-            <p>Modal Content</p>
-            <p>Modal Content</p>
-            <p>Modal Content</p>
-            <p>Modal Content</p>
+            <div class="home-modal-time-field">
+                Start:
+                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select start time" [(ngModel)]="modalStartTime">
+                    <nz-option *ngFor="let time of listOfTime" [nzLabel]="time" [nzValue]="time"></nz-option>
+                </nz-select>
+            </div>
+            <div class="home-modal-time-field">
+                End:
+                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select end time" [(ngModel)]="modalEndTIme">
+                    <nz-option *ngFor="let time of listOfTime" [nzLabel]="time" [nzValue]="time"></nz-option>
+                </nz-select>
+            </div>
         </ng-template>
         <ng-template #modalFooter>
             <button nz-button nzType="default" (click)="modalCancel()">Cancel</button>

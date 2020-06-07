@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<DBConnectionString>Data Source=localhost;Database=meeting;User ID=root;Password=!QAZ2wsx;</DBConnectionString>
+	<Services>
+		<Service>
+			<ServiceName>schedulelist</ServiceName>
+			<ServiceType>Intel.NsgAuto.WaferCost.ACID.Services.GetScheduleList</ServiceType>
+		</Service>
+        <Service>
+            <ServiceName>book</ServiceName>
+            <ServiceType>Intel.NsgAuto.WaferCost.ACID.Services.SetSchedule</ServiceType>
+        </Service>
+        <Service>
+            <ServiceName>user</ServiceName>
+            <ServiceType>Intel.NsgAuto.WaferCost.ACID.Services.GetUser</ServiceType>
+        </Service>
+	</Services>
+</configuration>
