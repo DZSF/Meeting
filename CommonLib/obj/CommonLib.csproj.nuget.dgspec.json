@@ -14,7 +14,7 @@
         "outputPath": "/Users/zyy/Documents/net/meeting/Meeting/CommonLib/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/zyy/.config/NuGet/NuGet.Config"
+          "/Users/zyy/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -43,10 +43,6 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
-            },
-            "Oracle.ManagedDataAccess": {
-              "target": "Package",
-              "version": "[19.7.0, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 //using Microsoft.AspNetCore.Http;
-using Intel.NsgAuto.WaferCost.Base.CommonLib.Database;
-using Intel.NsgAuto.WaferCost.Base.CommonLib.Database.SQLServer;
-using Intel.NsgAuto.WaferCost.Base.CommonLib.Database.MySQL;
+using Meeting.Base.CommonLib.Database;
+using Meeting.Base.CommonLib.Database.SQLServer;
+using Meeting.Base.CommonLib.Database.MySQL;
 
-namespace Intel.NsgAuto.WaferCost.Base.CommonLib.ServiceIF
+namespace Meeting.Base.CommonLib.ServiceIF
 {
     public class ServiceContext
     {

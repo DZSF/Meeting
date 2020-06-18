@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 
-namespace Intel.NsgAuto.WaferCost.Base.CommonLib.Database
+namespace Meeting.Base.CommonLib.Database
 {
     public static class ReflectionExtensions
     {

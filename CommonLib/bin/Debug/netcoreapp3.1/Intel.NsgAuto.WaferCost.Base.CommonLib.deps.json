@@ -10,7 +10,6 @@
         "dependencies": {
           "MySql.Data": "8.0.20",
           "Newtonsoft.Json": "12.0.3",
-          "Oracle.ManagedDataAccess": "19.7.0",
           "System.Data.SqlClient": "4.8.1"
         },
         "runtime": {
@@ -214,14 +213,6 @@
           }
         }
       },
-      "Oracle.ManagedDataAccess/19.7.0": {
-        "runtime": {
-          "lib/net40/Oracle.ManagedDataAccess.dll": {
-            "assemblyVersion": "4.122.19.1",
-            "fileVersion": "4.122.19.1"
-          }
-        }
-      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
@@ -282,7 +273,7 @@
           "runtimes/win-arm64/native/sni.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "4.6.25512.1"
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -291,7 +282,7 @@
           "runtimes/win-x64/native/sni.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "4.6.25512.1"
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -300,7 +291,7 @@
           "runtimes/win-x86/native/sni.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "4.6.25512.1"
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -1239,13 +1230,6 @@
       "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
       "path": "newtonsoft.json/12.0.3",
       "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
-    },
-    "Oracle.ManagedDataAccess/19.7.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-MIZVdvMT7i1eM1WXu2YpqHIuAOqmB0V2/UL8lk7TsC/0hQqiFF4rrwCl1HvcmHpXnqcbxzlBAvuELu1hCpQ61Q==",
-      "path": "oracle.manageddataaccess/19.7.0",
-      "hashPath": "oracle.manageddataaccess.19.7.0.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",

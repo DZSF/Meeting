@@ -25,6 +25,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.5" />
   </ItemGroup>
 
   <ItemGroup>
@@ -53,6 +54,7 @@
   <ItemGroup>
     <Folder Include="Services\" />
     <Folder Include="Config\" />
+    <Folder Include="ClientApp\src\app\common\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Config\SericesConfig.xml">

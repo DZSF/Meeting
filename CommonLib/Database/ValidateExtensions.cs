@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Intel.NsgAuto.WaferCost.Base.CommonLib.Database
+namespace Meeting.Base.CommonLib.Database
 {
     internal static class ValidateExtensions
     {

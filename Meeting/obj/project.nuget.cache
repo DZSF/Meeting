@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cplGk/wh26lH0QJPSVHs9Vl/0MB7cRyfUKkRl7qgEAassiEbZfYG0sDyOzyDZFpGSzK1ZLNExmvG5iQ7jDH6ig==",
+  "dgSpecHash": "HwDspZSqRTax9aeOQBOh+FYfPqfB4meWUU37TZoW5JNlv2gKcmUGDpC36fBBwXu8KvDHtY4yNl1Ncl5te8yNow==",
   "success": true,
   "projectFilePath": "/Users/zyy/Documents/net/meeting/Meeting/Meeting/Meeting.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,8 @@
     "/Users/zyy/.nuget/packages/k4os.compression.lz4.streams/1.1.11/k4os.compression.lz4.streams.1.1.11.nupkg.sha512",
     "/Users/zyy/.nuget/packages/k4os.hash.xxhash/1.0.6/k4os.hash.xxhash.1.0.6.nupkg.sha512",
     "/Users/zyy/.nuget/packages/microsoft.aspnetcore.html.abstractions/2.2.0/microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
+    "/Users/zyy/.nuget/packages/microsoft.aspnetcore.jsonpatch/3.1.5/microsoft.aspnetcore.jsonpatch.3.1.5.nupkg.sha512",
+    "/Users/zyy/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/3.1.5/microsoft.aspnetcore.mvc.newtonsoftjson.3.1.5.nupkg.sha512",
     "/Users/zyy/.nuget/packages/microsoft.aspnetcore.nodeservices/3.1.4/microsoft.aspnetcore.nodeservices.3.1.4.nupkg.sha512",
     "/Users/zyy/.nuget/packages/microsoft.aspnetcore.razor/2.2.0/microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/microsoft.aspnetcore.razor.language/3.1.0/microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",
@@ -66,8 +68,8 @@
     "/Users/zyy/.nuget/packages/mysqlconnector/0.61.0/mysqlconnector.0.61.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/netstandard.library/1.6.1/netstandard.library.1.6.1.nupkg.sha512",
     "/Users/zyy/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/Users/zyy/.nuget/packages/newtonsoft.json.bson/1.0.2/newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "/Users/zyy/.nuget/packages/nuget.frameworks/4.7.0/nuget.frameworks.4.7.0.nupkg.sha512",
-    "/Users/zyy/.nuget/packages/oracle.manageddataaccess/19.7.0/oracle.manageddataaccess.19.7.0.nupkg.sha512",
     "/Users/zyy/.nuget/packages/pomelo.entityframeworkcore.mysql/3.1.1/pomelo.entityframeworkcore.mysql.3.1.1.nupkg.sha512",
     "/Users/zyy/.nuget/packages/pomelo.jsonobject/2.2.1/pomelo.jsonobject.2.2.1.nupkg.sha512",
     "/Users/zyy/.nuget/packages/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -174,16 +176,5 @@
     "/Users/zyy/.nuget/packages/system.xml.xpath/4.0.1/system.xml.xpath.4.0.1.nupkg.sha512",
     "/Users/zyy/.nuget/packages/system.xml.xpath.xmldocument/4.0.1/system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Oracle.ManagedDataAccess 19.7.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
-      "libraryId": "Oracle.ManagedDataAccess",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  "logs": []
 }

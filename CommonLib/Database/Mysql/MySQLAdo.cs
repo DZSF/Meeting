@@ -8,9 +8,9 @@ using System.Data.Common;
 //using System.Data.SqlClient;
 using MySql.Data;
 using MySql.Data.MySqlClient;
-using Intel.NsgAuto.WaferCost.Base.CommonLib.Utility;
+using Meeting.Base.CommonLib.Utility;
 
-namespace Intel.NsgAuto.WaferCost.Base.CommonLib.Database.MySQL
+namespace Meeting.Base.CommonLib.Database.MySQL
 {
     public class MySQLAdo : BaseAdo
     {

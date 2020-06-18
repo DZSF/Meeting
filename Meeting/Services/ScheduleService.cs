@@ -6,108 +6,110 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
-using Intel.NsgAuto.WaferCost.Base.CommonLib.Utility;
-using Intel.NsgAuto.WaferCost.Base.CommonLib.ServiceIF;
-using Intel.NsgAuto.WaferCost.Base.CommonLib.Database;
+using Meeting.Base.CommonLib.Utility;
+using Meeting.Base.CommonLib.ServiceIF;
+using Meeting.Base.CommonLib.Database;
 using System.Data.Common;
 using MySql.Data.MySqlClient;
+using System.Data;
 
-namespace Intel.NsgAuto.WaferCost.ACID.Services
+namespace Meeting.Services
 {
     public class GetScheduleList : BaseService
     {
-        public GetScheduleList()
+        protected override object DoProcess(string param)
         {
-        }
+            JObject paramObj = JsonConvert.DeserializeObject<dynamic>(param);
+            string date = paramObj.GetValue("date").ToObject<string>();
 
-        protected override void DoCheck(string param)
-        {
-            
-        }
+            string sql = Sql.sqlGetScheduleList.Replace("@Date", date);
+            IAdo ado = context.GetAdp(false);
+            DataTable data = ado.GetDataTable(sql);
 
-        protected override string DoProcess(string param)
-        {
-            string user = context.UserId;
+            Dictionary<string, List<GetScheduleListDto>> scheduleDic = new Dictionary<string, List<GetScheduleListDto>>();
+            if (data.Rows.Count > 0)
+            {
+                for (int i = 0; i < data.Rows.Count; i++)
+                {
+                    DataRow row = data.Rows[i];
+                    string room = row["Room"].ToString();
+                    if (scheduleDic.GetValueOrDefault(room) == null)
+                    {
+                        scheduleDic[room] = new List<GetScheduleListDto>();
+                    }
 
-            Dictionary<string, string[]> scheduleDic = new Dictionary<string, string[]>();
-            string[] arrayA = { "1/zhangyuanyuan@1-2,16-18", "2/Jack@3-5" };
-            scheduleDic.Add("510", arrayA);
-            string[] arrayB = { "1/zhangyuanyuan@5-10", "3/Seal@2-3,20-23" };
-            scheduleDic.Add("520", arrayB);
-            return JsonConvert.SerializeObject(scheduleDic);
+                    GetScheduleListDto schedule = new GetScheduleListDto {
+                        ID = UtilConvert.ObjToInt(row["ID"]),
+                        User = row["User"].ToString(),
+                        Start = row["Start"].ToString(),
+                        End = row["End"].ToString(),
+                    };
+                    scheduleDic[room].Add(schedule);
+                }
+            }
+            return scheduleDic;
         }
     }
 
-    public class GetUser : BaseService
+    public class GetInitial : BaseService
     {
-        protected override string DoProcess(string param)
+        protected override object DoProcess(string param)
         {
-            //this.ConnectDB();
-            return JsonConvert.SerializeObject(context.UserId is null ? "TestUser" : context.UserId);
-        }
-
-        private void ConnectDB() {
-            IAdo ado = context.GetAdp();
-            ado.Connection.Open();
-            DbCommand command = ado.GetCommand("select * from Room", null);
-            DbDataReader rdr = command.ExecuteReader();
-            rdr.Close();
-            command.Dispose();
-            ado.Connection.Close();
+            string username = context.UserId is null ? "zh.yuanyuan" : context.UserId;
+            return new Dictionary<string, object> { { "user", username } };
         }
     }
 
     public class SetSchedule : BaseService
     {
-        public SetSchedule()
+        protected override object DoProcess(string param)
         {
-        }
+            JObject paramObj = JsonConvert.DeserializeObject<dynamic>(param);
+            //JObject paramObj = JObject.Parse(data.ToString());
+            string room = paramObj.GetValue("room").ToObject<string>();
+            string user = paramObj.GetValue("user").ToObject<string>();
+            string start = paramObj.GetValue("start").ToObject<string>();
+            string end = paramObj.GetValue("end").ToObject<string>();
+            string date = paramObj.GetValue("date").ToObject<string>();
 
-        protected override void DoCheck(string param)
-        {
+            string sql = Sql.sqlGetScheduleList.Replace("@Date", date).Replace("@Room", room);
+            IAdo ado = context.GetAdp(false);
+            DataTable data = ado.GetDataTable(sql);
 
-        }
-
-        protected override string DoProcess(string param)
-        {
-            JObject dataObj = JsonConvert.DeserializeObject<dynamic>(param);
-            //JObject dataObj = JObject.Parse(data.ToString());
-            string room = dataObj.GetValue("room").ToObject<string>();
-            string user = dataObj.GetValue("user").ToObject<string>();
-            int start = dataObj.GetValue("start").ToObject<int>();
-            int end = dataObj.GetValue("end").ToObject<int>();
-            //DateTime date = dataObj.GetValue("user").ToObject<DateTime>();
-            // get from db according to room & date
-            Dictionary<string, int> dic1 = new Dictionary<string, int>
+            bool canSchedule = true;
+            if (data.Rows.Count > 0)
             {
-                {"start", 0 }, {"end", 1 }
-            };
-            Dictionary<string, int> dic2 = new Dictionary<string, int>
-            {
-                {"start", 10 }, {"end", 13 }
-            };
-            Dictionary<string, int>[] listOfTimeInterval = { dic1, dic2 };
-            List<int> listOfExistTime = new List<int>();
-            foreach (Dictionary<string, int> time in listOfTimeInterval)
-            {
-                for (int i = time["start"]; i < time["end"]; i++)
+                for (int i = 0; i < data.Rows.Count; i++)
                 {
-                    listOfExistTime.Add(i);
+                    DataRow row = data.Rows[i];
+                    string startTime = row["Start"].ToString();
+                    string endTime = row["Start"].ToString();
+                    if (string.Compare(start, startTime) < 0) {
+                        if (string.Compare(end, startTime) > 0)
+                        {
+                            canSchedule = false;
+                        }
+                        break;
+                    } else if (string.Compare(start, endTime) < 0) {
+                        canSchedule = false;
+                        break;
+                    } else {
+                        continue;
+                    }
                 }
             }
-            // [0, 10, 11, 12]
-            List<int> listOfBookTime = new List<int>();
-            for (int i = start; i < end; i++)
-            {
-                listOfBookTime.Add(i);
-            }
+
             bool code = false;
-            if (listOfBookTime.Except(listOfExistTime).ToList().Count == listOfBookTime.Count)
-            {
-                code = true;
-                // insert to db
+            if (canSchedule) {
+                string sql_set = Sql.sqlSetSchedule.
+                    Replace("@User", user).Replace("@Room", room).
+                    Replace("@Start", date + ' ' + start).Replace("@End", date + ' ' + end);
+                int set_result = ado.ExecuteCommand(sql_set);
+                if (set_result == 1) {
+                    code = true;
+                }
             }
-            return JsonConvert.SerializeObject(code);
+            return code;
         }
     }
 }

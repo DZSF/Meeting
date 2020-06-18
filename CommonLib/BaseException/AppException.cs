@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Intel.NsgAuto.WaferCost.Base.CommonLib.BaseException
+namespace Meeting.Base.CommonLib.BaseException
 {
     public class AppException : Exception
     {

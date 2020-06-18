@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Intel.NsgAuto.WaferCost.Base.CommonLib.BaseException;
+using Meeting.Base.CommonLib.BaseException;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 
-namespace Intel.NsgAuto.WaferCost.Base.CommonLib.ServiceIF
+namespace Meeting.Base.CommonLib.ServiceIF
 {
     public abstract class BaseService : IService
     {
@@ -14,9 +14,9 @@ namespace Intel.NsgAuto.WaferCost.Base.CommonLib.ServiceIF
         {
             context = ctx;
         }
-        public string Process(string param)
+        public object Process(string param)
         {
-            string result = string.Empty;
+            object result = new object();
             JObject errObj = new JObject();
             try
             {
@@ -40,7 +40,8 @@ namespace Intel.NsgAuto.WaferCost.Base.CommonLib.ServiceIF
             }
             if (errObj.HasValues)
             {
-                result = JsonConvert.SerializeObject(errObj);
+                //result = JsonConvert.SerializeObject(errObj);
+                result = errObj;
             }
             return result;
         }
@@ -48,6 +49,6 @@ namespace Intel.NsgAuto.WaferCost.Base.CommonLib.ServiceIF
         {
 
         }
-        protected abstract string DoProcess(string param);
+        protected abstract object DoProcess(string param);
     }
 }

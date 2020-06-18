@@ -246,15 +246,6 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Oracle.ManagedDataAccess/19.7.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Oracle.ManagedDataAccess.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Oracle.ManagedDataAccess.dll": {}
-        }
-      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
         "type": "package",
         "runtimeTargets": {
@@ -2166,30 +2157,6 @@
         "newtonsoft.json.12.0.3.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
-      ]
-    },
-    "Oracle.ManagedDataAccess/19.7.0": {
-      "sha512": "MIZVdvMT7i1eM1WXu2YpqHIuAOqmB0V2/UL8lk7TsC/0hQqiFF4rrwCl1HvcmHpXnqcbxzlBAvuELu1hCpQ61Q==",
-      "type": "package",
-      "path": "oracle.manageddataaccess/19.7.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "PerfCounters/register_odpm_perfmon_counters.ps1",
-        "PerfCounters/unregister_odpm_perfmon_counters.ps1",
-        "bin/x64/Oracle.ManagedDataAccessIOP.dll",
-        "bin/x86/Oracle.ManagedDataAccessIOP.dll",
-        "content/net40/App.config.install.xdt",
-        "content/net40/App.config.transform",
-        "content/net40/App.config.uninstall.xdt",
-        "content/net40/Web.config.install.xdt",
-        "content/net40/Web.config.transform",
-        "content/net40/Web.config.uninstall.xdt",
-        "info.txt",
-        "lib/net40/Oracle.ManagedDataAccess.dll",
-        "oracle.manageddataaccess.19.7.0.nupkg.sha512",
-        "oracle.manageddataaccess.nuspec",
-        "readme.txt"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -6300,7 +6267,6 @@
     ".NETCoreApp,Version=v3.1": [
       "MySql.Data >= 8.0.20",
       "Newtonsoft.Json >= 12.0.3",
-      "Oracle.ManagedDataAccess >= 19.7.0",
       "System.Data.SqlClient >= 4.8.1"
     ]
   },
@@ -6317,7 +6283,7 @@
       "outputPath": "/Users/zyy/Documents/net/meeting/Meeting/CommonLib/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/zyy/.config/NuGet/NuGet.Config"
+        "/Users/zyy/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -6347,10 +6313,6 @@
             "target": "Package",
             "version": "[12.0.3, )"
           },
-          "Oracle.ManagedDataAccess": {
-            "target": "Package",
-            "version": "[19.7.0, )"
-          },
           "System.Data.SqlClient": {
             "target": "Package",
             "version": "[4.8.1, )"
@@ -6374,17 +6336,5 @@
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.300/RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Oracle.ManagedDataAccess 19.7.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
-      "libraryId": "Oracle.ManagedDataAccess",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  }
 }

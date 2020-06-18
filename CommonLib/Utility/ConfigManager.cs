@@ -5,7 +5,7 @@ using System.Xml.Linq;
 using System.Xml.XPath;
 using System.ComponentModel;
 
-namespace Intel.NsgAuto.WaferCost.Base.CommonLib.Utility
+namespace Meeting.Base.CommonLib.Utility
 {
     public class ConfigManager
     {

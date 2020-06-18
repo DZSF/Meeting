@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
-using Intel.NsgAuto.WaferCost.Base.CommonLib.Utility;
+using Meeting.Base.CommonLib.Utility;
 
-namespace Intel.NsgAuto.WaferCost.Base.CommonLib.Database.SQLServer
+namespace Meeting.Base.CommonLib.Database.SQLServer
 {
     public class SQLServerAdo : BaseAdo
     {

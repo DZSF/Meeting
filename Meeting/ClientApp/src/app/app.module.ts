@@ -15,7 +15,6 @@ import { IconDefinition } from '@ant-design/icons-angular';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 
 registerLocaleData(en);
 const antDesignIcons = AllIcons as {
@@ -27,7 +26,6 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
   declarations: [
     AppComponent,
     HomeComponent,
-    FetchDataComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -41,7 +39,6 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
 
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'fetch-data', component: FetchDataComponent },
     ])
   ],
   providers: [

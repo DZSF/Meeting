@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Intel.NsgAuto.WaferCost.Base.CommonLib.Utility
+namespace Meeting.Base.CommonLib.Utility
 {
     public class MessageManager
     {

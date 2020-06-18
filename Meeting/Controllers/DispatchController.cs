@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
-using Intel.NsgAuto.WaferCost.Base.CommonLib.Utility;
-using Intel.NsgAuto.WaferCost.Base.CommonLib.ServiceIF;
-using Intel.NsgAuto.WaferCost.ACID.Services;
+using Meeting.Base.CommonLib.Utility;
+using Meeting.Base.CommonLib.ServiceIF;
+using Meeting.Services;
 
-namespace Intel.NsgAuto.WaferCost.ACID.Controllers
+namespace Meeting.Controllers
 {
     [Route("api/meeting")]
     [ApiController]
@@ -18,39 +18,25 @@ namespace Intel.NsgAuto.WaferCost.ACID.Controllers
     {
         // GET api/<DispatchController>/5/d
         [HttpGet("{baseUri}/{serviceName}")]
-        public string Get()
+        public ActionResult Get()
         {
             string baseUri = RouteData.Values["baseUri"].ToString();
             string serviceName = RouteData.Values["serviceName"].ToString();
-            string param = JsonConvert.SerializeObject(Request.Query.Keys);
-            return ServiceProcess(baseUri, serviceName, param);
+            return ServiceProcess(baseUri, serviceName, Request.Query["paramJson"]);
         }
 
         // POST api/<DispatchController>
         [HttpPost("{baseUri}/{serviceName}")]
-        public string Post([FromBody] dynamic param)
+        public ActionResult Post([FromBody] dynamic param)
         {
             string baseUri = RouteData.Values["baseUri"].ToString();
             string serviceName = RouteData.Values["serviceName"].ToString();
             return ServiceProcess(baseUri, serviceName, param.ToString());
         }
 
-        // PUT api/<DispatchController>/5
-        [HttpPut("{baseUri}/{serviceName}")]
-        public string Put(string baseUri, string serviceName, string param)
+        protected ActionResult ServiceProcess(string baseUri, string serviceName, string param)
         {
-            return ServiceProcess(baseUri, serviceName, param);
-        }
-
-        // DELETE api/<DispatchController>/5
-        [HttpDelete("{baseUri}/{serviceName}")]
-        public void Delete(string baseUri, string serviceName, string param)
-        {
-            ServiceProcess(baseUri, serviceName, param);
-        }
-        protected string ServiceProcess(string baseUri, string serviceName, string param)
-        {
-            string result = string.Empty;
+            object result;
             string serviceTypeStr = ConfigManager.GetService(serviceName);
             try
             {
@@ -59,7 +45,6 @@ namespace Intel.NsgAuto.WaferCost.ACID.Controllers
                 BaseService service = Activator.CreateInstance(serviceType) as BaseService;
                 ServiceContext context = new ServiceContext();
                 context.UserId = User.Identity.Name;
-                //context.Request = Request;
                 service.SetContext(context);
                 result = service.Process(param);
             }
@@ -68,9 +53,9 @@ namespace Intel.NsgAuto.WaferCost.ACID.Controllers
                 JObject errObj = new JObject();
                 errObj.Add("ErrType", "UnknownException");
                 errObj.Add("ErrMessage", ex.StackTrace);
-                result = JsonConvert.SerializeObject(errObj);
+                return new BadRequestObjectResult(new { message = ex.Message, stackTrace = ex.StackTrace });
             }
-            return result;
+            return new OkObjectResult(result);
         }
     }
 }

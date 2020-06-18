@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
-namespace Intel.NsgAuto.WaferCost.Base.CommonLib.Database
+namespace Meeting.Base.CommonLib.Database
 {
     public abstract class BaseAdo : IAdo
     {

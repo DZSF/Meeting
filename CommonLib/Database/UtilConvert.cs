@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 
-namespace Intel.NsgAuto.WaferCost.Base.CommonLib.Database
+namespace Meeting.Base.CommonLib.Database
 {
     public static class UtilConvert
     {

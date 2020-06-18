@@ -4,15 +4,15 @@
 	<Services>
 		<Service>
 			<ServiceName>schedulelist</ServiceName>
-			<ServiceType>Intel.NsgAuto.WaferCost.ACID.Services.GetScheduleList</ServiceType>
+			<ServiceType>Meeting.Services.GetScheduleList</ServiceType>
 		</Service>
         <Service>
             <ServiceName>book</ServiceName>
-            <ServiceType>Intel.NsgAuto.WaferCost.ACID.Services.SetSchedule</ServiceType>
+            <ServiceType>Meeting.Services.SetSchedule</ServiceType>
         </Service>
         <Service>
-            <ServiceName>user</ServiceName>
-            <ServiceType>Intel.NsgAuto.WaferCost.ACID.Services.GetUser</ServiceType>
+            <ServiceName>initial</ServiceName>
+            <ServiceType>Meeting.Services.GetInitial</ServiceType>
         </Service>
 	</Services>
 </configuration>

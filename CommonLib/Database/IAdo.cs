@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Intel.NsgAuto.WaferCost.Base.CommonLib.Database
+namespace Meeting.Base.CommonLib.Database
 {
     public interface IAdo
     {
