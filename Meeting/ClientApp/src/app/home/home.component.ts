@@ -84,7 +84,7 @@ export class HomeComponent {
 
   private _getInitial(): void {
     this._http.get<any>(this._baseUrl + 'initial').subscribe(result => {
-      this.user = result.roomlist;
+      this.user = result.user;
     }, error => console.error(error));
   }
 
